@@ -1,4 +1,5 @@
-// import propTypes from "prop-types";
+import PropTypes from "prop-types";
+import s from './Profile.module.css';
 
 export const Profile = ({
     username,
@@ -8,33 +9,40 @@ export const Profile = ({
     stats: { followers, views, likes },
 }) => {
     return (
-<section class="profile">
-  <div class="description">
+      <section className={s.profile}>
+        <div className={s.description}>
     <img
-      src={avatar}
-      alt="User avatar"
-      class="avatar"
+            src={avatar}
+            alt="User avatar"
+            className={s.avatar}
     />
-    <p class="name">{username}</p>
-    <p class="tag">@{tag}</p>
-    <p class="location">{location}</p>
+    <p className={s.name}>{username}</p>
+    <p className={s.info}>@{tag}</p>
+    <p className={s.info}>{location}</p>
   </div>
 
-  <ul class="stats">
-    <li>
-      <span class="label">Followers</span>
-      <span class="quantity">{followers}</span>
+        <ul className={s.stats}>
+    <li className={s.statsItem}>
+      <span  className={s.label}>Followers</span>
+      <span className={s.quantity}>{followers}</span>
     </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">{views}</span>
+    <li className={s.statsItem}>
+      <span className={s.label}>Views</span>
+      <span className={s.quantity}>{views}</span>
     </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">{likes}</span>
+    <li className={s.statsItem}>
+      <span className={s.label}>Likes</span>
+      <span className={s.quantity}>{likes}</span>
     </li>
   </ul>
 </section>
     )
 }
-      
+ 
+Profile.propTypes = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.objectOf(PropTypes.number),
+};
