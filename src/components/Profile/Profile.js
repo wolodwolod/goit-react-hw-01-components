@@ -8,7 +8,7 @@ export const Profile = ({
     stats: { followers, views, likes },
 }) => {
     return (
-<div class="profile">
+<section class="profile">
   <div class="description">
     <img
       src={avatar}
@@ -34,7 +34,7 @@ export const Profile = ({
       <span class="quantity">{likes}</span>
     </li>
   </ul>
-</div>
+</section>
     )
 }
       
