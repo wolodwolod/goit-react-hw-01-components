@@ -1,4 +1,4 @@
-import user from 'components/SocialProfile/user.json';
+import user from 'user.json';
 
 
 export const App = () => {
