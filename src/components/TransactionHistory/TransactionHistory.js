@@ -3,6 +3,14 @@ import { Table, TableHead, TableItem } from './TransactionHistory.styled.jsx';
 
 
 export const TransactionHistory = ({ items }) => {
+
+items.defaultProps = {
+      id: String(Math.round((Math.random() * (1000 - 1)))),
+      type: "Unknown",
+      amount: "Unknown",
+      currency: "Unknown"
+}; 
+
     return (
         <Table>
             <thead>
