@@ -4,7 +4,6 @@ export const Table = styled.table`
   margin: 50px auto 0 auto;
   width: 600px;
   border-collapse: collapse;
-  border-spacing: 0;
   border: 1px solid gray;
     background-color: #fafafa;
   
